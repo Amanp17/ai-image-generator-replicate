@@ -1,8 +1,11 @@
 const express = require('express');
 const Replicate = require('replicate');
 const bodyParser = require('body-parser');
+const http = require('http');
 
 const app = express();
+const httpServer = http.createServer(app);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -50,6 +53,6 @@ app.post('/api/getImage', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log('listening on port 3000');
+httpServer.listen(80, () => {
+  console.log('HTTP server listening on port 80');
 });
