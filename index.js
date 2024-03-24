@@ -51,5 +51,5 @@ app.post('/api/getImage', async (req, res) => {
 
 
 app.listen(3000, () => {
-  console.log('listening on port 3001');
+  console.log('listening on port 3000');
 });
